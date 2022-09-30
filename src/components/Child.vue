@@ -1,15 +1,8 @@
 <template>
   <div class="hello">
     <div class="box">
-      <div class="title">
-        <slot name="title"></slot>
-      </div>
-      <div class="content">
-        <slot></slot>
-      </div>
-      <div class="footer">
-        <slot name="footer" :phone="phone"></slot>
-      </div>
+      <h1>{{ name }}</h1>
+      <h3>{{ phone }}</h3>
       </div>
   </div>
 </template>
@@ -17,9 +10,19 @@
 <script>
 export default {
   name: 'Child',
+  props: {
+    name: {
+      type: String,
+      default: 'Nitesh Das'
+    },
+    phone: {
+      type: String,
+      default: '01747102896'
+    }
+  },
    data () {
     return {
-      phone: '01747102896jj',
+      phone1: '01747102896jj',
     }
   }
 }

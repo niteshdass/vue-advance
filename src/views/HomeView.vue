@@ -1,14 +1,11 @@
 <template>
   <div class="home">
-    <Child>
-      <template #title>
-        <h1>My name is Nitesh Das</h1>
-      </template>
-      <p>I am a web developer</p>
-      <template v-slot:footer="slotProps">
-        <p>{{ slotProps.phone }}</p>
-      </template>
-    </Child>
+    <Child
+      v-for="(user, item) in users"
+      :key="item"
+      :="feedItem(user).attr"
+      @="feedItem(user).events"
+    />
   </div>
 </template>
 
@@ -21,10 +18,45 @@ export default {
   components: {
     Child
   },
-  // data () {
-  //   return {
-  //     phone: '01747102896',
-  //   }
-  // }
+  data () {
+    return {
+      users:[
+        {
+          id:1,
+          name: 'Nitesh Das',
+          phone: '01747102896',
+          email: 'dasnitesh780@gmail.com'
+        },
+        {
+          id:2,
+          name: 'Nitesh Das 2',
+          phone: '01747102896',
+          email: 'dasnitesh780@gmail.com'
+        },
+        {
+          id:3,
+          name: 'Nitesh Das 3',
+          phone: '01747102896',
+          email: 'dasnitesh780@gmail.com'
+        }
+      ]
+    }
+  },
+  methods: {
+    feedItem (user) {
+      return {
+        attr: {
+          name: user.name, phone: user.phone
+        },
+        events: {
+          click: () => this.handleClick(user)
+        }
+      }
+    },
+    handleClick(user) {
+      console.log('clicked');
+      alert(`You clicked ${user.name}`);
+    }
+  }
 }
 </script>
