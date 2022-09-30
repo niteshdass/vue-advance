@@ -1,22 +1,23 @@
 <template>
   <div class="home">
-    <HelloWorld
-      name="Nitesh das"
-      phone="01747102896"
-      email="dasnitesh780@gmail.com"
-      about="I am a web developer"
-    />
+    <Child>
+        <h1>Slot</h1>
+    </Child>
+    <Child>
+        <h1>Name</h1>
+        <input />
+    </Child>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Child from '../components/Child.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    Child
   },
   data () {
     return {
