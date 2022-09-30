@@ -8,7 +8,7 @@
         <slot></slot>
       </div>
       <div class="footer">
-        <slot name="footer"></slot>
+        <slot name="footer" :phone="phone"></slot>
       </div>
       </div>
   </div>
@@ -17,6 +17,11 @@
 <script>
 export default {
   name: 'Child',
+   data () {
+    return {
+      phone: '01747102896jj',
+    }
+  }
 }
 </script>
 

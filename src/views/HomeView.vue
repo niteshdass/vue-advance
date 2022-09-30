@@ -5,8 +5,8 @@
         <h1>My name is Nitesh Das</h1>
       </template>
       <p>I am a web developer</p>
-      <template v-slot:footer>
-        <p>My phone number is 01747102896</p>
+      <template v-slot:footer="slotProps">
+        <p>{{ slotProps.phone }}</p>
       </template>
     </Child>
   </div>
@@ -21,10 +21,10 @@ export default {
   components: {
     Child
   },
-  data () {
-    return {
-      phone: '01747102896',
-    }
-  }
+  // data () {
+  //   return {
+  //     phone: '01747102896',
+  //   }
+  // }
 }
 </script>
