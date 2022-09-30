@@ -12,7 +12,10 @@ export default {
   props: {
     name: {
       type: String,
-      default: 'Nitesh Das'
+      default: 'Nitesh Das',
+      validator: function (value) {
+        return value.length > 5
+      }
     },
     phone: {
       type: [Number, String],
