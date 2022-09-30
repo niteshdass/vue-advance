@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld
+      name="Nitesh das"
+      phone="01747102896"
+      email="dasnitesh780@gmail.com"
+      about="I am a web developer"
+    />
   </div>
 </template>
 
@@ -13,6 +17,11 @@ export default {
   name: 'HomeView',
   components: {
     HelloWorld
+  },
+  data () {
+    return {
+      phone: '01747102896',
+    }
   }
 }
 </script>
