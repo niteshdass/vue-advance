@@ -1,8 +1,16 @@
 <template>
   <div class="hello">
     <div class="box">
-      <slot />
-    </div>
+      <div class="title">
+        <slot name="title"></slot>
+      </div>
+      <div class="content">
+        <slot></slot>
+      </div>
+      <div class="footer">
+        <slot name="footer"></slot>
+      </div>
+      </div>
   </div>
 </template>
 
@@ -23,6 +31,15 @@ export default {
     text-align: center;
     margin: 0 auto;
     max-width: 50%;
+  }
+  .title {
+    color: #42b983;
+  }
+  .content {
+    color: #b11635;
+  }
+  .footer {
+    color: #f39c12;
   }
 
 </style>

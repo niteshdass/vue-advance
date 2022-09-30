@@ -1,11 +1,13 @@
 <template>
   <div class="home">
     <Child>
-        <h1>Slot</h1>
-    </Child>
-    <Child>
-        <h1>Name</h1>
-        <input />
+      <template #title>
+        <h1>My name is Nitesh Das</h1>
+      </template>
+      <p>I am a web developer</p>
+      <template v-slot:footer>
+        <p>My phone number is 01747102896</p>
+      </template>
     </Child>
   </div>
 </template>
